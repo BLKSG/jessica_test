@@ -52,7 +52,14 @@ def test_code():
         prev_block = block
         print('{} added to blockchain'.format(block))
         print('Hash: {}\n'.format(block.hash))
-
-
+    """allow user to create new block"""
+    while True:
+        new_data=input('Enter you data information: ')
+        block=next_block(prev_block, new_data)
+        blockchain.append(block)
+        prev_block=block;
+        print('{} added to blockchain'.format(block))
+        print('Hash: {}\n'.format(block.hash))
+    
 # run the test code
 test_code()
