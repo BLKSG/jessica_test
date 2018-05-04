@@ -34,6 +34,7 @@ class Blockchain{
     }
 
     AddBlock(newBlock){
+        this.index=LastBlock.index+1;
         newBlock.previous_hash=this.LastBlock.hash;
         //newBlock.index=this.LastBlock.index+1;
         newBlock.hash=newBlock.calculate_hash();
@@ -42,6 +43,6 @@ class Blockchain{
 }
 
 YizhangChain = new Blockchain();
-YizhangChain.AddBlock(new Block(1,"01/01/2021","testing"));
+YizhangChain.AddBlock(new Block("01/01/2021","testing"));
 console.log(YizhangChain);
 
